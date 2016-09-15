@@ -26,7 +26,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["image"]["size"] > 11500000) {
+if ($_FILES["image"]["size"] > 115000000) {
     echo "IMAGEN DEMASIADO PESADA.";
     $uploadOk = 0;
 }
