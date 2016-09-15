@@ -43,7 +43,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
         echo "FOTO ". basename( $_FILES["image"]["name"]). " SUBIDO!.";
-        $sql = "INSERT INTO POST(titulo,contenido,id_usuario_fk)VALUES ('$data[0]', '$data[1]' ,1)";
+        $sql = "INSERT INTO POST(titulo,contenido,status,id_usuario_fk)VALUES ('$data[0]','$data[1]','publicado' ,1)";
         $connection->query($sql);
         //if ($connection->query($sql) === TRUE) {
         //    echo "New record created successfully";

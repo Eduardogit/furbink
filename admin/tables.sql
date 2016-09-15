@@ -1,3 +1,5 @@
+create database furbink;
+	use furbink;
 CREATE TABLE USUARIO(
 	id_usuario integer primary key auto_increment,
 	username varchar(80),
@@ -20,6 +22,7 @@ CREATE TABLE POST(
 	id_post integer primary key auto_increment,
 	titulo varchar(100),
 	contenido TEXT,
+	status varchar(20) DEFAULT "borrador",
 	id_usuario_fk integer,
 	FOREIGN KEY (id_usuario_fk) 
 	REFERENCES USUARIO(id_usuario)
