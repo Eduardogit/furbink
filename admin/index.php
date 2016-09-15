@@ -5,21 +5,36 @@
 </head>
 
 <body>
-	<!-- container section start -->
-	<section id="container" class="">
+
+  <!-- container section start -->
+  <section id="container" class="">
 
 
-		<?php include('../protected/views/header.php') ?>    
-		<!--header end-->
+    <?php include('../protected/views/header.php') ?>    
+    <!--header end-->
 
-		<!--sidebar start-->
-		<?php include_once('../protected/views/sidebar.php') ?>
-		<!--sidebar end-->
+    <!--sidebar start-->
+    <?php include_once('../protected/views/sidebar.php') ?>
+    <!--sidebar end-->
 
-		<!--main content start-->
-		<section id="main-content">
-			<section class="wrapper">            
-				<!--overview start-->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">            
+        
+      
+      <!-- ALERTA PUBLICACION -->
+      <?php 
+      if(isset($_GET['post'])){
+      echo ''.
+      '<div class="alert alert-info">'.
+        '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+        '<strong>Correcto!</strong> Articulo Publicado'.
+      '</div>';
+       }?>
+       <!-- FIN ALERTA PUBLICACION-->
+
+
+        <!--overview start-->
 				<div class="row">
 					<div class="col-lg-12">
 						<h3 class="page-header"><i class="fa fa-laptop"></i> Panel </h3>

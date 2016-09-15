@@ -16,10 +16,6 @@ CREATE TABLE MENSAJES(
 	facebook varchar(100),
 	correo varchar(100)
 );
-CREATE TABLE IMG(
-	id_img integer primary key auto_increment,
-	url varchar(80)
-);
 CREATE TABLE POST(
 	id_post integer primary key auto_increment,
 	titulo varchar(100),
@@ -27,6 +23,13 @@ CREATE TABLE POST(
 	id_usuario_fk integer,
 	FOREIGN KEY (id_usuario_fk) 
 	REFERENCES USUARIO(id_usuario)
+);
+CREATE TABLE IMG(
+	id_img integer primary key auto_increment,
+	url varchar(80),
+	id_post_fk integer,
+	FOREIGN KEY (id_post_fk)
+	REFERENCES POST(id_post)
 );
 CREATE TABLE TAGS(
 	id_tags integer primary key auto_increment,
@@ -41,15 +44,7 @@ CREATE TABLE POSTS_TAGS(
 	FOREIGN KEY (id_tags_fk) 
 	REFERENCES TAGS(id_tags)
 );
-CREATE TABLE POST_IMG(
-	id_post_img integer primary key auto_increment,
-	id_img_fk integer,
-	id_post_fk integer,
-	FOREIGN KEY (id_img_fk) 
-	REFERENCES IMG(id_img),
-	FOREIGN KEY (id_post_fk) 
-	REFERENCES POST(id_post)
-);
+
 CREATE TABLE GALERIA(
 	id_galeria integer primary key auto_increment,
 	nombre_foto varchar(80),
@@ -67,3 +62,4 @@ CREATE TABLE MENSAJES_GALERIA(
 	FOREIGN KEY (id_mensaje_fk) 
 	REFERENCES MENSAJES(id_mensaje)
 );
+insert into USUARIO (username) VALUES('admin');

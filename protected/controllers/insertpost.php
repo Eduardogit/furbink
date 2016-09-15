@@ -1,4 +1,5 @@
 <?php 
+include_once('../conf/connection.php');
 $data = [];
 $data[] = $_POST['titulo'];
 $data[] = $_POST['editor1'];
@@ -25,7 +26,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["image"]["size"] > 1500000) {
+if ($_FILES["image"]["size"] > 11500000) {
     echo "IMAGEN DEMASIADO PESADA.";
     $uploadOk = 0;
 }
@@ -41,10 +42,27 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-
         echo "FOTO ". basename( $_FILES["image"]["name"]). " SUBIDO!.";
+        $sql = "INSERT INTO POST(titulo,contenido,id_usuario_fk)VALUES ('$data[0]', '$data[1]' ,1)";
+        $connection->query($sql);
+        //if ($connection->query($sql) === TRUE) {
+        //    echo "New record created successfully";
+        //} else {
+        //    echo "Error: " . $sql . "<br>" . $connection->error;
+        //}
+        $sql1 = "INSERT INTO IMG(url,id_post_fk)VALUES('$data[2]' ,'$connection->insert_id')";
+        $connection->query($sql1);
+        //if ($connection->query($sql) === TRUE) {
+        //    echo "New record created successfully";
+        //} else {
+        //    echo "Error: " . $sql . "<br>" . $connection->error;
+        //}
+
+        $connection->close();
+        header('location:../../admin/index.php?post=ok');
     } else {
         echo "ERROR SUBIENDO ARCHIVO";
     }
 }
+
 ?>
