@@ -13,6 +13,21 @@
     #cke_1_top{
       background: #000!important;
     }
+    .content {
+  width: 100%;
+  background-color: grey;
+}
+.diagonal {
+  border-bottom: 100px solid red;
+  border-left: 75px solid rgba(0, 0, 0, 0);
+  display: block;
+  height: 0;
+  width: 50%;
+  float: right;
+}
+.clear {
+  clear: both
+}
   </style>
   <section id="container" class="">
 
@@ -22,6 +37,11 @@
       <section class="wrapper">      
       <div class="container">
         <div class="row">
+        <div class="content">
+  <div class="diagonal"></div>
+  <div class="clear"></div>
+</div>
+
         <?php 
         $sql    = "SELECT * FROM POST ORDER BY id_post DESC";
         $result = $connection->query($sql);
