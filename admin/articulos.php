@@ -20,20 +20,32 @@
     <?php include('../protected/views/sidebar.php') ?>
     <section id="main-content">
       <section class="wrapper">      
-
-          <?php 
+      <div class="container">
+        <div class="row">
+        <?php 
         $sql    = "SELECT * FROM POST ORDER BY id_post DESC";
         $result = $connection->query($sql);
         foreach ($result as $row) {
           $sql1    = "SELECT url FROM IMG where id_post_fk = ".$row['id_post']."";
           $result_img= $connection->query($sql1);
-          echo "</br>";
-          echo $row['titulo'];
-          echo $row['contenido'];
-          echo "</br>";            
+          foreach ($result_img as $img) {
+
+          echo "<div style='padding:50px ;margin-bottom:50px;' class=' panel col-md-12'>".
+                  "<div class='col-md-7'>".
+                    "<h2>".$row['titulo']."</h2>".
+                    "<hr>".
+                    "<p>".$row['contenido']."</p>".
+                  "</div>".
+                  "<img class='' style='height:200px' src='../protected/uploads/".$img['url']."'></img>".
+               "</div>";
+          }
+            
         }
 
        ?>
+          
+        </div>
+      </div>
       </section>
     </section>
   </section>
