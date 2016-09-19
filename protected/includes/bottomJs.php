@@ -12,7 +12,7 @@
     <script src="../assets/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="../assets/js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="../assets/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+    <script src="../assets/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="../assets/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
     <script src="../assets/js/calendar-custom.js"></script>

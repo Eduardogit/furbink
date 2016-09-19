@@ -25,11 +25,27 @@
       <!-- ALERTA PUBLICACION -->
       <?php 
       if(isset($_GET['post'])){
+        if($_GET['post'] == "actualizado"){
+
       echo ''.
-      '<div class="alert alert-info">'.
+      '<div class="alert alert-success">'.
         '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
-        '<strong>Correcto!</strong> Articulo Publicado'.
+        '<strong>Correcto!</strong> Articulo Actualizado'.
       '</div>';
+
+        }elseif ($_GET['post'] =="ok") {
+        echo ''.
+        '<div class="alert alert-info">'.
+          '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+          '<strong>Correcto!</strong> Articulo Publicado'.
+        '</div>';
+        }elseif ($_GET['post'] =="eliminado") {
+          echo ''.
+          '<div class="alert alert-danger">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            '<strong>Correcto!</strong> Articulo Eliminado'.
+          '</div>';
+        }
        }?>
        <!-- FIN ALERTA PUBLICACION-->
 

@@ -1,3 +1,4 @@
+drop database furbink;
 create database furbink;
 	use furbink;
 CREATE TABLE USUARIO(
@@ -18,14 +19,24 @@ CREATE TABLE MENSAJES(
 	facebook varchar(100),
 	correo varchar(100)
 );
+CREATE TABLE CATEGORIA(
+	id_categoria integer primary key auto_increment,
+	nombre_categoria varchar(40)
+);
 CREATE TABLE POST(
 	id_post integer primary key auto_increment,
 	titulo varchar(100),
 	contenido TEXT,
 	status varchar(20) DEFAULT "borrador",
+	fecha timestamp DEFAULT CURRENT_TIMESTAMP,
+	id_categoria_fk integer,
 	id_usuario_fk integer,
 	FOREIGN KEY (id_usuario_fk) 
 	REFERENCES USUARIO(id_usuario)
+	ON DELETE CASCADE,
+	FOREIGN KEY (id_categoria_fk) 
+	REFERENCES CATEGORIA(id_categoria)
+	ON DELETE CASCADE
 );
 CREATE TABLE IMG(
 	id_img integer primary key auto_increment,
@@ -33,6 +44,7 @@ CREATE TABLE IMG(
 	id_post_fk integer,
 	FOREIGN KEY (id_post_fk)
 	REFERENCES POST(id_post)
+	ON DELETE CASCADE
 );
 CREATE TABLE TAGS(
 	id_tags integer primary key auto_increment,
@@ -43,9 +55,11 @@ CREATE TABLE POSTS_TAGS(
 	id_tags_fk integer,
 	id_post_fk integer,
 	FOREIGN KEY (id_post_fk) 
-	REFERENCES POST(id_post),
+	REFERENCES POST(id_post)
+	ON DELETE CASCADE,
 	FOREIGN KEY (id_tags_fk) 
 	REFERENCES TAGS(id_tags)
+	ON DELETE CASCADE
 );
 
 CREATE TABLE GALERIA(
@@ -55,14 +69,19 @@ CREATE TABLE GALERIA(
 	id_usuario_fk integer,
 	FOREIGN KEY (id_usuario_fk) 
 	REFERENCES USUARIO(id_usuario)
+	ON DELETE CASCADE
 );
 CREATE TABLE MENSAJES_GALERIA(
 	id_mensajes_galeria integer primary key auto_increment,
 	id_galeria_fk integer,
 	id_mensaje_fk integer,
 	FOREIGN KEY (id_galeria_fk) 
-	REFERENCES GALERIA(id_galeria),
+	REFERENCES GALERIA(id_galeria)
+	ON DELETE CASCADE,
 	FOREIGN KEY (id_mensaje_fk) 
 	REFERENCES MENSAJES(id_mensaje)
+	ON DELETE CASCADE
 );
 insert into USUARIO (username) VALUES('admin');
+insert into CATEGORIA (nombre_categoria) VALUES('percing');
+insert into CATEGORIA (nombre_categoria) VALUES('tattoo');

@@ -4,6 +4,8 @@ $data = [];
 $data[] = $_POST['titulo'];
 $data[] = $_POST['editor1'];
 $data[] = basename( $_FILES["image"]["name"]);
+$data[] = $_POST['categoria'];
+
 print_r($data);
 $target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -21,10 +23,10 @@ if(isset($_POST["submit"])) {
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
-    echo "LA IMAGEN YA EXISTE.";
-    $uploadOk = 0;
-}
+//if (file_exists($target_file)) {
+//    echo "LA IMAGEN YA EXISTE.";
+//    $uploadOk = 0;
+//}
 // Check file size
 if ($_FILES["image"]["size"] > 115000000) {
     echo "IMAGEN DEMASIADO PESADA.";
@@ -43,7 +45,8 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
         echo "FOTO ". basename( $_FILES["image"]["name"]). " SUBIDO!.";
-        $sql = "INSERT INTO POST(titulo,contenido,status,id_usuario_fk)VALUES ('$data[0]','$data[1]','publicado' ,1)";
+        $sql = "INSERT INTO POST(titulo,contenido,status,id_categoria_fk,id_usuario_fk)VALUES ('$data[0]','$data[1]','publicado',$data[3] ,1)";
+        //die();
         $connection->query($sql);
         //if ($connection->query($sql) === TRUE) {
         //    echo "New record created successfully";
