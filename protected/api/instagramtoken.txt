@@ -1,0 +1,15 @@
+client_id=0abb1553e3a842beb02f8c18eb4181b3
+access_token=3315188220.0abb155.c6bace7a97544aee9cdbc7f74eeb34a2
+
+https://api.instagram.com/v1/users/0abb1553e3a842beb02f8c18eb4181b3/follows?access_token=3315188220.0abb155.c6bace7a97544aee9cdbc7f74eeb34a2
+
+https://api.instagram.com/v1/users/self/follows?access_token=3315188220.0abb155.c6bace7a97544aee9cdbc7f74eeb34a2
+
+https://www.instagram.com/oauth/authorize/?client_id=0abb1553e3a842beb02f8c18eb4181b3&redirect_uri=http://localhost/Furbink&response_type=code&scope=basic+public_content+follower_list+comments+relationships+likes
+
+
+http://localhost/Furbink/?code=420522bfd9454225ba77e5154f44e14a
+
+
+https://api.instagram.com/v1/users/self/follows?access_token=3315188220.0abb155.c6bace7a97544aee9cdbc7f74eeb34a2
+

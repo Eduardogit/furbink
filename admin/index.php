@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<?php include_once('../protected/includes/head.php') ?>
+  <?php include_once('../protected/api/instagram.php') ?>
+  <?php include_once('../protected/controllers/indexInfo.php') ?>
 </head>
 
 <body>
@@ -73,7 +76,7 @@
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="info-box brown-bg">
 							<i class="fa fa-paper-plane-o"></i>
-							<div class="count">20</div>
+							<div class="count"><?php echo $numero_post ?></div>
 							<div class="title">Publicaciones</div>						
 						</div><!--/.info-box-->			
 					</div><!--/.col-->	
@@ -89,7 +92,7 @@
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="info-box green-bg">
 							<i class="fa fa-instagram"></i>
-							<div class="count">236</div>
+							<div class="count"><?php echo $likes ?></div>
 							<div class="title">Instagram followers</div>						
 						</div><!--/.info-box-->			
 					</div><!--/.col-->
