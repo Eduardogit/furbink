@@ -8,7 +8,7 @@ function scrape_insta($username) {
 	return $insta_array;
 }
 //Supply a username
-$my_account = '_eduardoenriquez'; 
+$my_account = 'furbyalbertodiaz'; 
 //Do the deed
 $results_array = scrape_insta($my_account);
 //An example of where to go from there
@@ -17,4 +17,3 @@ $results_array = scrape_insta($my_account);
 		//echo "</pre>";
 $latest_array = $results_array['entry_data']['ProfilePage'][0]['user']['followed_by'];
 $likes = $latest_array['count'];
-echo "$likes";

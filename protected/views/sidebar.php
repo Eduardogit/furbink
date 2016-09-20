@@ -18,13 +18,20 @@
                 <ul class="sub">
                     <li><a href="articulos.php">Articulos</a></li>
                     <li><a href="post.php">Publicar</a></li>
+                    <li><a href="sesion.php">Sesion</a></li>
                 </ul>
             </li>
-             <li class="">
-                <a class="" href="galeria.php">
+
+            <li class="sub-menu">
+                <a class="" href="#">
                     <i class="icon_document_alt"></i>
-                    <span>Galeria</span>
+                    <span>Galeria </span>
+                    <span class="menu-arrow arrow_carrot-down"></span>
                 </a>
+                <ul class="sub">
+                    <li><a href="todos.php">Todos</a></li>
+                    <li><a href="galeria.php">Subir</a></li>
+                </ul>
             </li>
             <li class="">
                 <a class="" href="index.php">

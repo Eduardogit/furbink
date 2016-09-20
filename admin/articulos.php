@@ -90,7 +90,7 @@
                     "<h4>".$row['titulo']."</h4>".
                     "<h5 class='titulo'>fecha: ".date('d/m/Y',strtotime($row['fecha']))."|<strong> ".$categoria[nombre_categoria]."</strong>| usuario</h5>".
                     "<a  href='post.php?id=$row[id_post]'><button class='editar pull-right btn btn-primary'>Editar</button></a>".
-                    "<a  href='../protected/controllers/eliminarpost.ph?pid=$row[id_post]'><button class='editar pull-right btn btn-danger'>Eliminar</button></a>".
+                    "<a  href='../protected/controllers/eliminarpost.php?id=$row[id_post]'><button class='editar pull-right btn btn-danger'>Eliminar</button></a>".
                "</div>";
           
             
