@@ -34,6 +34,7 @@ body {
     font-weight: 100;
     z-index: 1000;
     margin-top: 50px; 
+    text-shadow: -5px -5px 5px #aaa;
 }
 
 .text-vertical-center {
@@ -279,9 +280,9 @@ footer {
   right: 5px;
 }
 
-#machine{
-    width: 15vw;
-    position: relative;
+#collage{
+    min-height: 100%;
+    min-width: 100%;
 }
 
 #head {

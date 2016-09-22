@@ -28,6 +28,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+    <script>
+        $(document).ready(function(){
+            $("mch").click(function(){
+                $("#div1").fadeToggle();
+            });
+        });
+</script>
+
     </head>
 
 
@@ -37,10 +45,10 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" id="name" href="#">Furbink</a>
+              <a class="navbar-brand" id="name">Furbink</a>
           </div>
           <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Inicio</a></li>
+              <li class="active"><a href="#top">Inicio</a></li>
               <li><a href="#services">Servicios</a></li>
               <li><a href="#portfolio">Galeria</a></li>
               <li><a href="blog.php">Blog</a></li>
@@ -91,11 +99,14 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
                             <span class="fa-stack fa-4x">
-                                <i class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
+                                <i class="fa-stack-2x"><img id="mch" class="img-responsive" src="assets/front/img/machine.png"></i>
                             </span>
                             <h4>
                                 <strong>Piercing</strong>
                             </h4>
+                        </div>
+                        <div id="div1" style="background-color: 'red';">
+                            
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
