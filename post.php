@@ -30,24 +30,35 @@
         <![endif]-->
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" id="name" href="#">Furbink</a>
+          </div>
+              <ul class="nav navbar-nav">
+                  <li class=""><a href="#">Inicio</a></li>
+                  <li class=""><a href="#services">Servicios</a></li>
+                  <li><a href="#portfolio">Galeria</a></li>
+                  <li class="active"><a href="blog.php">Blog</a></li>
+                  <li><a href="#contact">Contacto</a></li>
+              </ul>
+          </div>
+      </nav>
 <style>
 	body{
 		overflow-x:hidden;
 		background: #ccc;
 	}
-	#contenedor{
+	#contenedor,.principal{
 		background: #fff;
+    padding: 0px;
 	}
-	.principal {
-	display:table;
-	text-align:center;
-	float:left;
-	}
-	.principal #img {
-		display:block;
-		float:none;
-	}
-
+  #titulo{
+    padding-top: 45vh;
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Lato'    
+  }
 </style>
 <div class="container-fluid">
 	<div class="row">
@@ -65,13 +76,14 @@
       $result_img= $connection->query($sql1);
       $categoria = $result_categoria->fetch_assoc();
       $img = $result_img->fetch_assoc();
-      echo "<div   class='principal col-md-12'>".
-      "<div id='img' style='height:500px;background:url(protected/uploads/".$img['url'].")center center fixed;background-size:cover;'>".
-      " </div></div>".
-                "<h4>".$row['titulo']."</h4>".
-                "<p class='col-md-12'>".$row['contenido']."</p>".
-                "<h5 class='titulo'>fecha: ".date('d/m/Y',strtotime($row['fecha']))."|<strong> ".$categoria[nombre_categoria]."</strong>| usuario</h5>".
-           "</div>";
+      echo "<div   class='principal  col-md-12'>".
+              "<div id='img' style='height:650px;background:url(protected/uploads/".$img['url'].")no-repeat center center fixed;background-size:cover;background-position:top'>".
+                "<h4 id='titulo' class='text-center'>".$row['titulo']."</h4>".
+              "</div>".
+            "</div>".
+                 "<p class='col-md-12'>".$row['contenido']."</p>".
+                 "<h5 class='titulo'>fecha: ".date('d/m/Y',strtotime($row['fecha']))."|<strong> ".$categoria[nombre_categoria]."</strong>| usuario</h5>".
+            "</div>";
       
         
     }          
