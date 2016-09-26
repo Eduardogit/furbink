@@ -71,6 +71,13 @@ CREATE TABLE GALERIA(
 	REFERENCES USUARIO(id_usuario)
 	ON DELETE CASCADE
 );
+CREATE TABLE MENSAJES(
+	id_mensaje integer primary key not null auto_increment,
+	nombre varchar(80),
+	email varchar(80),
+	mensaje blob
+)
+
 CREATE TABLE MENSAJES_GALERIA(
 	id_mensajes_galeria integer primary key auto_increment,
 	id_galeria_fk integer,
