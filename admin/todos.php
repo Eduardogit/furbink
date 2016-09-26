@@ -10,7 +10,7 @@
 <body>
 <section id="container" class="">
      
-      
+     
       <?php include('../protected/views/header.php') ?>    
       <!--header end-->
 
@@ -28,11 +28,12 @@
 			        foreach ($result as $row) {
 			        	echo "<li  style='position: absolute; left: 0px; top: 0px;' >".
 			        		
-			        			"<figure>".
+			        			"<figure class='fig'>".
 			        			"<img src='../protected/uploads/".$row['url']."' alt='img".$row['id_galeria']."'>".
 			        			"<figcaption>".
 			        				"<h3>".$row['nombre_foto']."</h3>".
 			        				"<p>".$row['descripcion']."</p>".
+                    				"<a  href='../protected/controllers/eliminargaleria.php?id=$row[id_galeria]'><button class='editar  btn btn-danger'>Eliminar</button></a>".
 			        			"</figcaption>".
 			        			"</figure>".
 
