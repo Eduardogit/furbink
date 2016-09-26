@@ -51,20 +51,19 @@
 
         <!-- Navigation -->
 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" id="name" href="#">Furbink</a>
-          </div>
-          <ul class="nav navbar-nav">
+       
+          <ul class="topnav" id="myTopnav">
               <li class="active"><a href="#">Inicio</a></li>
               <li><a href="#services">Servicios</a></li>
               <li><a href="galeria.php">Galeria</a></li>
               <li><a href="blog.php">Blog</a></li>
               <li><a href="#contact">Contacto</a></li>
+              <li class="icon">
+                    <a href="javascript:void(0);" onclick="myFunction()"><span class="glyphicon glyphicon-align-justify"></span></a>
+              </li>
           </ul>
-      </div>
-  </nav>
+  
+
 
     <!-- Header -->
     <header id="top" class="header">
