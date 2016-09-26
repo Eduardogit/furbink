@@ -50,6 +50,31 @@
           '</div>';
         }
        }?>
+
+       <?php 
+      if(isset($_GET['galeria'])){
+        if($_GET['galeria'] == "actualizado"){
+
+      echo ''.
+      '<div class="alert alert-success">'.
+        '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+        '<strong>Correcto!</strong> Galeria Actualizado'.
+      '</div>';
+
+        }elseif ($_GET['galeria'] =="ok") {
+        echo ''.
+        '<div class="alert alert-info">'.
+          '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+          '<strong>Correcto!</strong> Galeria Publicado'.
+        '</div>';
+        }elseif ($_GET['galeria'] =="eliminado") {
+          echo ''.
+          '<div class="alert alert-danger">'.
+            '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.
+            '<strong>Correcto!</strong> Galeria Eliminado'.
+          '</div>';
+        }
+       }?>
        <!-- FIN ALERTA PUBLICACION-->
 
 
@@ -68,7 +93,7 @@
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="info-box blue-bg">
 							<i class="fa fa-file-picture-o"></i>
-							<div class="count">74</div>
+							<div class="count"><?php echo $numero_galeria ?></div>
 							<div class="title">Imagenes</div>						
 						</div><!--/.info-box-->			
 					</div><!--/.col-->
