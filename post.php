@@ -45,19 +45,36 @@
           </div>
       </nav>
 <style>
+  @font-face {
+    font-family: 'titulo';
+    src: url('assets/fonts/B.otf');
+  }
+
 	body{
 		overflow-x:hidden;
 		background: #ccc;
 	}
-	#contenedor,.principal{
+  #contenedor,.principal{
+    box-shadow: 0px 0px 10px;
 		background: #fff;
     padding: 0px;
-	}
+  }
   #titulo{
-    padding-top: 45vh;
+    padding-top: 20vh;
     color: #fff;
+    font-size: 60px;
+      padding-left: 10px;
+    font-family: 'titulo'    
+  }
+  #texto{
+    padding: 20px;
+  }
+  #texto::first-letter{
+    font-size: 300%;
+  }
+  .datos{
+    margin-top: 50px;
     font-size: 40px;
-    font-family: 'Lato'    
   }
 </style>
 <div class="container-fluid">
@@ -79,17 +96,67 @@
       echo "<div   class='principal  col-md-12'>".
               "<div id='img' style='height:650px;background:url(protected/uploads/".$img['url'].")no-repeat center center fixed;background-size:cover;background-position:top'>".
                 "<h4 id='titulo' class='text-center'>".$row['titulo']."</h4>".
+                 "<p class='datos text-center'>".date('d/m/Y',strtotime($row['fecha']))."|<strong> ".$categoria[nombre_categoria]."</strong>| usuario</p>".
               "</div>".
             "</div>".
-                 "<p class='col-md-12'>".$row['contenido']."</p>".
-                 "<h5 class='titulo'>fecha: ".date('d/m/Y',strtotime($row['fecha']))."|<strong> ".$categoria[nombre_categoria]."</strong>| usuario</h5>".
+            "<section id='texto'>".
+                 "<p id='contenido' class='col-md-12'>".$row['contenido']."</p>".
+            "</section>".
+            "<div class='fb-comments' data-href='http://localhost/Furbink/post.php?id=".$row['id_post']."'data-width='800px' data-mobile='true' data-numposts='5'></div>".
             "</div>";
       
         
     }          
-	 ?>
-	 </div>
-	 </div>
+   ?>
+   </div>
+   </div>
 </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.7&appId=1070525586357233";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '176868826060401',
+      xfbml      : true,
+      status     :true, 
+      cookie     :true, 
+      version    : 'v2.7'
+    });
+    FB.getLoginStatus(function(response) {
+      console.log(JSON.stringify(response));
+      if(response.status == 'connected'){
+        document.getElementById('status').innerHTML = "Conectado!";
+      }else{
+        login();
+      }
+    })
+  };
+  function login(){
+   FB.login(function(response) {
+        if (response.authResponse) {
+           // proceed
+        } else {
+           // not auth / cancelled the login!
+        }
+      });
+  }
+
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+</script>
+
 </body>
 </html>
