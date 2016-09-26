@@ -20,6 +20,7 @@
     <!-- Custom Fonts -->
     <link href="assets/front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,221 +28,232 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-    <script>
-        $(document).ready(function(){
-            $("mch").click(function(){
-                $("#div1").fadeToggle();
-            });
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mch").click(function(){
+                    $("#tattoo").slideToggle();
+                });
+                $("#mch1").click(function(){
+                    $("#piercing").slideToggle();
+                });
+                $("#mch2").click(function(){
+                    $("#escarificacion").slideToggle();
+                });
+                $("#mch3").click(function(){
+                    $("#servicename").slideToggle();
+                });
         });
-</script>
-
+    </script>
     </head>
 
 
     <body>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" id="name">Furbink</a>
-          </div>
-          <ul class="nav navbar-nav">
-              <li class="active"><a href="#top">Inicio</a></li>
-              <li><a href="#services">Servicios</a></li>
-              <li><a href="#portfolio">Galeria</a></li>
-              <li><a href="blog.php">Blog</a></li>
-              <li><a href="#contact">Contacto</a></li>
-          </ul>
-      </div>
-  </nav>
+        <ul class="topnav" id="myTopnav">
+          <li><a href="#header">Inicio</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#portfolio">Galeria</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li class="icon">
+            <a href="javascript:void(0);" onclick="myFunction()"><span class="glyphicon glyphicon-collapse-down"></span></a>
+        </li>
+    </ul>
 
-  <!-- Header -->
-  <header id="top" class="header">
-    <div class="text-vertical-center2">
-        <h1 id="a">Furbink Tattoo</h1>
-        <br>
-    </div>
-</header>
-<img id="head" class="img-responsive" src="assets/front/img/machinetattoo.gif">
-<!-- About -->
-<section id="about" class="about">
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center2">
+            <h1 id="a">Furbink Tattoo</h1>
+            <br>
+        </div>
+    </header>
+    <img id="head" class="img-responsive" src="assets/front/img/machinetattoo.gif">
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Servicios</h1>
+        </div>
+    </aside>    
+    <section id="services" class="services bg-dark">
+        <div class="container" id="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i id="mch" class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
+                                </span>
+                                <h4>
+                                    <strong>Tattoo</strong>
+                                </h4>
+                            </div>
+                            <div id="tattoo">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolorem ullam reprehenderit nostrum sunt maiores, tenetur, adipisci laborum! Labore laboriosam numquam cumque placeat dolore eaque odit repellat saepe eum delectus.
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i id="mch1" class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
+                                </span>
+                                <h4>
+                                    <strong>Piercing</strong>
+                                </h4>
+                            </div>
+                            <div id="piercing">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eveniet animi, laudantium, et necessitatibus minus officiis laboriosam molestiae provident ex incidunt tenetur repellat quas? Et illo error, repudiandae asperiores aut.
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i id="mch2" class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
+                                </span>
+                                <h4>
+                                    <strong>Escarificaciones</strong>
+                                </h4>
+                            </div>
+                            <div id="escarificacion">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, mollitia, sit! Aliquid atque, rerum quo repellendus corrupti temporibus praesentium nulla debitis eveniet accusantium vero ducimus, voluptatem nostrum! At, rerum nemo!
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i id="mch3" class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
+                                </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                            </div>
+                            <div id="servicename">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia molestias quo enim, nihil assumenda numquam nisi magnam! Illo distinctio placeat, facere debitis ea magni, ut, in facilis optio, eius cumque.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Galeria</h1>
+        </div>
+    </aside>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-4.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Call to Action -->
+    <aside class="callout" id="contact">
+        <div class="text-vertical-center">
+            <h1>Contacto</h1>
+        </div>
+    </aside>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
-
+            <div class="col-lg-12">
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-dark btn-lg">Enviar mensaje</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
-</section>
-
-<!-- Services -->
-<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id="services" class="services bg-primary">
-    <div class="container" id="container">
-        <div class="row text-center">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2><strong>Servicios</strong></h2>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
-                            </span>
-                            <h4>
-                                <strong>Tattoo</strong>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa-stack-2x"><img id="mch" class="img-responsive" src="assets/front/img/machine.png"></i>
-                            </span>
-                            <h4>
-                                <strong>Piercing</strong>
-                            </h4>
-                        </div>
-                        <div id="div1" style="background-color: 'red';">
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
-                            </span>
-                            <h4>
-                                <strong>Escarificaciones</strong>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa-stack-2x"><img class="img-responsive" src="assets/front/img/machine.png"></i>
-                            </span>
-                            <h4>
-                                <strong>Service Name</strong>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row (nested) -->
-            </div>
-            <!-- /.col-lg-10 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
-
-<!-- Callout -->
-<aside class="callout">
-    <div class="text-vertical-center">
-        <h1>Galeria</h1>
-    </div>
-</aside>
-
-<!-- Portfolio -->
-<section id="portfolio" class="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-1.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-2.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-3.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="assets/front/img/portfolio-4.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-lg-10 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
-
-<!-- Call to Action -->
-<aside class="callout" id="contact">
-    <div class="text-vertical-center">
-        <h1>Contacto</h1>
-    </div>
-</aside>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h3 class="section-subheading text-muted">Estamos a sus ordenes</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <form name="sentMessage" id="contactForm" novalidate>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-lg-12 text-center">
-                        <div id="success"></div>
-                        <button type="submit" class="btn btn-dark btn-lg">Enviar mensaje</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 </section>
 <!-- Map -->
 <hr>
 <div>
-<section class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.802214428123!2d-98.8041336856184!3d19.203839187014722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce22faea918457%3A0xed57f1fbda0aac23!2sAv.+Morelos+42%2C+Tlalmanalco%2C+56700+Tlalmanalco%2C+M%C3%A9x.%2C+M%C3%A9xico!5e0!3m2!1ses-419!2sco!4v1474058669441" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-</section>
+    <section class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.802214428123!2d-98.8041336856184!3d19.203839187014722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce22faea918457%3A0xed57f1fbda0aac23!2sAv.+Morelos+42%2C+Tlalmanalco%2C+56700+Tlalmanalco%2C+M%C3%A9x.%2C+M%C3%A9xico!5e0!3m2!1ses-419!2sco!4v1474058669441" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </section>
 </div>
 <!-- Footer -->
 <footer>
@@ -347,6 +359,15 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
         $('.map').on('click', onMapClickHandler);
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
     </script>
 
 </body>

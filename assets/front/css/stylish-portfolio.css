@@ -32,10 +32,10 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    font-size: 15.5vw;
+    font-size: 18vw;
     font-weight: 100;
     z-index: 1000;
-    margin-top: 50px; 
+    margin-top: 20px; 
     text-shadow: -5px -5px 5px #aaa;
 }
 
@@ -43,7 +43,7 @@ body {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    background-color: #222222;
+    horizontal-align: middle;
 }
 
 .text-vertical-center2 h1{
@@ -52,10 +52,11 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    font-size: 15.5vw;
+    font-size: 25vw;
     font-weight: 100;
     z-index: 1000;
-    margin-top: 50px; 
+    margin-top: 30px; 
+    text-shadow: -5px -5px 5px #aaa;
 }
 .text-vertical-center2 {
     display: table-cell;
@@ -67,6 +68,7 @@ body {
 
 .btn-dark {
     border-radius: 0;
+    border-color: #FFFFFF;
     color: #fff;
     background-color: rgba(0,0,0,0.4);
 }
@@ -216,9 +218,8 @@ hr.small {
 .callout {
     display: table;
     width: 100%;
-    height: 400px;
     color: #fff;
-    background: url(../img/callout.jpg) no-repeat center center scroll;
+    background-color: #222222;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -309,8 +310,8 @@ footer {
     height: auto;
     width: auto;
     overflow: hidden;
-    background-color: #222222;
-
+    background-color: #393939;
+    color: #FFFFFF;
 }
 
 #services:before { 
@@ -327,28 +328,56 @@ footer {
     transform: rotate(45deg);
 }
 
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {background-color: #555;}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
  /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:680px) {
-  ul.navbar-nav li:not(:first-child) {display: none;}
-  ul.navbar-nav li.icon {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
     float: right;
     display: inline-block;
   }
 }
 
-/* The "responsive" class is added to the navbar-nav with JavaScript when the user clicks on the icon. This class makes the navbar-nav look good on small screens */
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
 @media screen and (max-width:680px) {
-  ul.navbar-nav.responsive {position: relative;}
-  ul.navbar-nav.responsive li.icon {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  ul.navbar-nav.responsive li {
+  ul.topnav.responsive li {
     float: none;
     display: inline;
   }
-  ul.navbar-nav.responsive li a {
+  ul.topnav.responsive li a {
     display: block;
     text-align: left;
   }
