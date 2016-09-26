@@ -53,7 +53,7 @@
 
        
           <ul class="topnav" id="myTopnav">
-              <li class="active"><a href="#">Inicio</a></li>
+              <li class="active"><a href="inicio.php#">Inicio</a></li>
               <li><a href="#services">Servicios</a></li>
               <li><a href="galeria.php">Galeria</a></li>
               <li><a href="blog.php">Blog</a></li>
