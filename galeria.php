@@ -34,6 +34,17 @@
         <![endif]-->
 </head>
 <body>
+<style>
+	#titulo{
+		padding-top: 20vh;
+		padding-bottom: 30vh;
+		font-family: 'furbink';
+		color: #fff;
+	}
+	#titulo h2{
+		font-size: 20vw;
+	}
+</style>
 
     <ul class="topnav" id="myTopnav">
               <li class="active"><a href="inicio.php#">Inicio</a></li>
@@ -46,14 +57,13 @@
               </li>
           </ul>
 
-        <header style="height: 500px;" id="top" class="header">
-    <div class="text-vertical-center2">
-        <h1 id="a">Galeria</h1>
-        <br>
-    </div>
-    </header>
-    <img id="head" class="img-responsive" src="assets/front/img/machine.gif">
-
+		    <div id="titulo" class="col-md-12 text-center">
+		        <h2>Galeria</h2>
+		        <br>
+		    </div>
+    	<img id="head" class="img-responsive" src="assets/front/img/machine.gif">
+		<div class="col-md-12">
+			
 	    <div id="grid-gallery" class="grid-gallery">
 			<section class="grid-wrap">
 				<ul style="position: relative; height: 3414.13px;" class="grid">
@@ -111,6 +121,8 @@
 				<div class="info-keys icon">Navigate with arrow keys</div>
 			</section><!-- // slideshow -->
 		</div>  
+				</div>
+
 <?php include_once('protected/includes/bottomJs-front.php') ?>
 <?php include_once('protected/includes/bottomJsGallery-front.php') ?>
 </body>
