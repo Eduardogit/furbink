@@ -35,27 +35,24 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" id="name" href="#">Furbink</a>
-          </div>
-              <ul class="nav navbar-nav">
-                  <li class=""><a href="#">Inicio</a></li>
-                  <li class=""><a href="#services">Servicios</a></li>
-                  <li class="active"><a href="galeria.php">Galeria</a></li>
-                  <li ><a href="blog.php">Blog</a></li>
-                  <li><a href="#contact">Contacto</a></li>
-              </ul>
-          </div>
-      </nav>
+    <ul class="topnav" id="myTopnav">
+              <li class="active"><a href="#">Inicio</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="galeria.php">Galeria</a></li>
+              <li><a href="blog.php">Blog</a></li>
+              <li><a href="#contact">Contacto</a></li>
+              <li class="icon">
+                    <a href="javascript:void(0);" onclick="myFunction()"><span class="glyphicon glyphicon-align-justify"></span></a>
+              </li>
+          </ul>
+
         <header style="height: 500px;" id="top" class="header">
     <div class="text-vertical-center2">
         <h1 id="a">Galeria</h1>
         <br>
     </div>
     </header>
-    <img id="head" class="img-responsive" src="assets/front/img/machinetattoo.gif">
+    <img id="head" class="img-responsive" src="assets/front/img/machine.gif">
 
 	    <div id="grid-gallery" class="grid-gallery">
 			<section class="grid-wrap">
