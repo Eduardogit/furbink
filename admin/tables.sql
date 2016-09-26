@@ -76,7 +76,19 @@ CREATE TABLE MENSAJES(
 	id_mensaje integer primary key not null auto_increment,
 	nombre varchar(80),
 	email varchar(80),
-	mensaje blob
+	mensaje TEXT,
+)
+
+CREATE TABLE MENSAJES_IMG(
+	id_mensaje_img integer primary key not null auto_increment,
+	id_mensaje_fk integer,
+	FOREIGN KEY (id_mensaje_fk) 
+	REFERENCES MENSAJES(id_mensaje)
+	ON DELETE CASCADE,
+	id_img_fk integer,
+	FOREIGN KEY (id_img_fk) 
+	REFERENCES IMG(id_img)
+	ON DELETE CASCADE
 )
 
 CREATE TABLE MENSAJES_GALERIA(

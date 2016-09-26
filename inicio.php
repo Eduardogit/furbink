@@ -42,8 +42,8 @@
                 $("#mch3").click(function(){
                     $("#servicename").slideToggle();
                 });
-        });
-    </script>
+            });
+        </script>
     </head>
 
 
@@ -51,18 +51,18 @@
 
         <!-- Navigation -->
 
-       
-          <ul class="topnav" id="myTopnav">
-              <li class="active"><a href="inicio.php#">Inicio</a></li>
-              <li><a href="#services">Servicios</a></li>
-              <li><a href="galeria.php">Galeria</a></li>
-              <li><a href="blog.php">Blog</a></li>
-              <li><a href="#contact">Contacto</a></li>
-              <li class="icon">
-                    <a href="javascript:void(0);" onclick="myFunction()"><span class="glyphicon glyphicon-align-justify"></span></a>
-              </li>
-          </ul>
-  
+
+        <ul class="topnav" id="myTopnav">
+          <li class="active"><a href="inicio.php#">Inicio</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="galeria.php">Galeria</a></li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li class="icon">
+            <a href="javascript:void(0);" onclick="myFunction()"><span class="glyphicon glyphicon-align-justify"></span></a>
+        </li>
+    </ul>
+
 
 
     <!-- Header -->
@@ -242,13 +242,36 @@
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
-                            <input type="submit" class="btn btn-dark btn-lg" value="Enviar mensaje">
+                            <button class="btn btn-dark btn-lg" data-toggle="modal" data-target="#myModal">Enviar mensaje</button>
+                            
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                                  <h4 class="modal-title" id="myModalLabel">Puedes adjuntar alguno de nuestros diseños para darte un presupuesto</h4>
+                              </div>
+                              <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-dark">Enviar</button>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
-    </div>
+    </form>
+</div>
+</div>
+</div>
 </section>
 <!-- Map -->
 <hr>
