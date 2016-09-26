@@ -150,7 +150,7 @@
 	height: 100%;
 	background: #fff;
 	border: 50px solid #fff;
-	overflow: hidden;
+    overflow-x: hidden!important;
 }
 
 .slideshow figcaption {

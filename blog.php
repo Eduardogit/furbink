@@ -98,7 +98,7 @@ body{
               <ul class="nav navbar-nav">
                   <li class=""><a href="#">Inicio</a></li>
                   <li class=""><a href="#services">Servicios</a></li>
-                  <li><a href="#portfolio">Galeria</a></li>
+                  <li><a href="galeria.php">Galeria</a></li>
                   <li class="active"><a href="blog.php">Blog</a></li>
                   <li><a href="#contact">Contacto</a></li>
               </ul>

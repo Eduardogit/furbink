@@ -68,7 +68,6 @@
         <button id="publicar" style="margin-left:20px" class="btn btn-primary btn-lg pull-right" ><?php echo $button?> IMAGEN</button> 
         <input type="hidden" name="id" value="<?php echo $id_post?>">
         </form>
-        <button id="guardar" class="btn btn-success btn-lg pull-right" >GUARDAR</button>
       </section>
     </section>
   </section>

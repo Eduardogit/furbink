@@ -65,6 +65,7 @@ CREATE TABLE POSTS_TAGS(
 CREATE TABLE GALERIA(
 	id_galeria integer primary key auto_increment,
 	nombre_foto varchar(80),
+	descripcion TEXT,
 	url varchar(80),
 	id_usuario_fk integer,
 	FOREIGN KEY (id_usuario_fk) 
