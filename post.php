@@ -154,6 +154,17 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+          } 
+        else {
+          x.className = "topnav";
+          }
+    }
+
+
 </script>
 
 </body>

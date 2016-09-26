@@ -113,5 +113,15 @@
 		</div>  
 <?php include_once('protected/includes/bottomJs-front.php') ?>
 <?php include_once('protected/includes/bottomJsGallery-front.php') ?>
+<script type="text/javascript">
+	        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+</script>
 </body>
 </html>
