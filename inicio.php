@@ -67,7 +67,7 @@
             <br>
         </div>
     </header>
-    <img id="head" class="img-responsive" src="assets/front/img/machinetattoo.gif">
+    <img id="head" class="img-responsive" src="assets/front/img/machine.gif">
     <!-- About -->
     <section id="about" class="about">
         <div class="container">
@@ -260,7 +260,7 @@
                 <h4><strong>Furbink Tattoo</strong>
                 </h4>
                 <p>Avenida Morelos #42 Int #8
-                    <br>Tlalamanalco, Edo. de México 56723</p>
+                    <br>Tlalmanalco, Edo. de México 56723</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i>01 999 396 6486</li>
                     </ul>
@@ -279,10 +279,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="assets/front/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/front/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script>
