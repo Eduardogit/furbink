@@ -338,7 +338,7 @@
                        global.splice(i, 1);
                     }
                 }
-
+            $("#img").val(global)
         }else{  
             element.style = 'border: 5px solid #47BF5C'
             global.push(id)
