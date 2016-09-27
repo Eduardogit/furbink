@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+      <?php include_once('protected/conf/connection.php');?>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -238,6 +239,8 @@
                                 <textarea class="form-control" placeholder="Escribe algo..." id="message" required data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
+
+                            <input type="hidden" name="imagenes" id="img">
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
@@ -254,13 +257,25 @@
                                       <span aria-hidden="true">&times;</span>
                                   </button>
                                   <h4 class="modal-title" id="myModalLabel">Puedes adjuntar alguno de nuestros diseños para darte un presupuesto</h4>
+                                  <div style="height:400px;overflow-y:scroll;" class="col-md-12">
+                                      
+                                      <?php 
+
+                                        $sql    = "SELECT * FROM GALERIA ORDER BY id_galeria DESC";
+                                        $result = $connection->query($sql);
+                                        foreach ($result as $row) {
+                                            echo "<img onclick='seleccion(this,".$row['id_galeria'].")' style='padding:20px;' class='img-responsive col-md-6' src='protected/uploads/".$row['url']."' >"
+                                            ;
+                                             }
+                                        ?>
+                                  </div>
                               </div>
-                              <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
+                            <div class="  modal-footer">
+                            <div class="col-md-12">
+                                
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-dark">Enviar</button>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -314,6 +329,12 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+    var global;
+    function seleccion(element,id){
+        element.style = 'border: 5px solid #47BF5C'
+        $("#img").val($("#img").val()+""+id+",")
+
+    }
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();
