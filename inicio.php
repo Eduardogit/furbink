@@ -329,12 +329,24 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
-    var global;
+    var global = [];
     function seleccion(element,id){
-        element.style = 'border: 5px solid #47BF5C'
-        $("#img").val($("#img").val()+""+id+",")
+        if(isInArray(global,id)){
+            element.style = 'border: 0px'
+                for(var i = global.length - 1; i >= 0; i--) {
+                    if(global[i] === id) {
+                       global.splice(i, 1);
+                    }
+                }
+
+        }else{  
+            element.style = 'border: 5px solid #47BF5C'
+            global.push(id)
+            $("#img").val(global)
+        }
 
     }
+
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();
@@ -414,7 +426,11 @@
                 x.className = "topnav";
             }
         }
-    </script>
+        function isInArray(array, search)
+            {
+                return array.indexOf(search) >= 0;
+            }
+         </script>
 
 </body>
 
