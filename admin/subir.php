@@ -6,6 +6,12 @@
  <link rel="stylesheet" href="../assets/css/imgpreview.css">
  <title>Post</title>
 </head>
+<?php 
+    session_start();
+    if(empty($_SESSION['usuario'])){
+        header('Location:logout.php');
+    }
+   ?>
 <body>
   <style>
     #cke_1_top{

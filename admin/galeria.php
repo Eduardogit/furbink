@@ -5,7 +5,12 @@
 	<title>Galeria</title>
 	<script src="../assets/js/dropzone.js"></script>
 	<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-
+	<?php 
+    session_start();
+    if(empty($_SESSION['usuario'])){
+        header('Location:logout.php');
+    }
+   ?>
 </head>
 <body>
 	<section id="container" class="">

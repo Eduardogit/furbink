@@ -5,7 +5,12 @@
 
  <?php include_once('../protected/includes/head.php') ?>
  <link rel="stylesheet" href="../assets/css/imgpreview.css">
-
+  <?php 
+    session_start();
+    if(empty($_SESSION['usuario'])){
+        header('Location:logout.php');
+    }
+   ?>
  <title>Post</title>
 </head>
 <body>

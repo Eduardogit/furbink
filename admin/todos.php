@@ -8,6 +8,12 @@
   ?>
 </head>
 <body>
+	<?php 
+    session_start();
+    if(empty($_SESSION['usuario'])){
+        header('Location:logout.php');
+    }
+   ?>
 <section id="container" class="">
      
      

@@ -1,3 +1,10 @@
+<?php
+ ob_start();
+ session_start(); 
+    if(empty($_SESSION['usuario'])){
+        header('Location:logout.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +12,7 @@
 	<?php include_once('../protected/includes/head.php') ?>
   <?php include_once('../protected/api/instagram.php') ?>
   <?php include_once('../protected/controllers/indexInfo.php') ?>
+
 </head>
 
 <body>
@@ -26,7 +34,7 @@
         
       
       <!-- ALERTA PUBLICACION -->
-      <?php 
+      <?php
       if(isset($_GET['post'])){
         if($_GET['post'] == "actualizado"){
 
@@ -51,7 +59,7 @@
         }
        }?>
 
-       <?php 
+       <?php
       if(isset($_GET['galeria'])){
         if($_GET['galeria'] == "actualizado"){
 
@@ -125,79 +133,33 @@
 				</div><!--/.row-->
 				<h2>Publicaciones recientes</h2>
 			<div class="panel-group m-bot20" id="accordion">
+                   <?php
+                      $sql    = "SELECT * FROM POST ORDER BY id_post DESC ";
+                      $result = $connection->query($sql);
+                      foreach ($result as $row) {
+                        $sql2    = "SELECT nombre_categoria FROM CATEGORIA where id_categoria = ".$row['id_categoria_fk']."";
+                        $sql1    = "SELECT url FROM IMG where id_post_fk = ".$row['id_post']."";
+                        $result_categoria= $connection->query($sql2);
+                        $result_img= $connection->query($sql1);
+                        $categoria = $result_categoria->fetch_assoc();
+                        $img = $result_img->fetch_assoc();
+                        ?>
+
                           <div class="panel panel-default">
                               <div class="panel-heading">
                                   <h4 class="panel-title">
                                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                          10 Corrientes de tautajes parte I
+                                      <?php
+                                        echo  "<h4>".$row['titulo']."</h4>";                                             
+                                        ?>
                                       </a>
                                   </h4>
                               </div>
-                              <div style="height: auto;" id="collapseOne" class="panel-collapse in">
-                                  <div class="panel-body">
-                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                              </div>
                           </div>
-                          <div class="panel panel-default">
-                              <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                          10 Corrientes de tautajes parte II
-                                      </a>
-                                  </h4>
-                              </div>
-                              <div id="collapseTwo" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="panel panel-default">
-                              <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                          Tatuajes de tus besos llevo
-                                      </a>
-                                  </h4>
-                              </div>
-                              <div style="height: 0px;" id="collapseThree" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                              </div>
-                          </div>
-							<div class="panel panel-default">
-                              <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                          lorem Anim pariatur cliche reprehenderit
-                                      </a>
-                                  </h4>
-                              </div>
-                              <div style="height: 0px;" id="collapseThree" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="panel panel-default">
-                              <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                          lorem Anim pariatur cliche reprehenderit
-                                      </a>
-                                  </h4>
-                              </div>
-                              <div style="height: 0px;" id="collapseThree" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                              </div>
-                          </div>
-
+                              <?php
+                                }
+                             ?>                       
                       </div>
-                      <h2>Mas gustado</h2>
 			</section>
 			<!--main content end-->
 		</section>

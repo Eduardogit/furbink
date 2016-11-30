@@ -1,4 +1,6 @@
 <?php 
+ob_start();
+
   include_once('../protected/conf/connection.php');
   $sql    = "SELECT count(*) as total  FROM POST ";
   $result = $connection->query($sql);
@@ -10,4 +12,6 @@
   $result1 = $connection->query($sql1);
   $row1 = $result1->fetch_assoc();
   $numero_galeria = $row1['total'];
+  ob_end_flush();
+
  ?>

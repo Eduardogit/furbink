@@ -89,7 +89,7 @@ CREATE TABLE MENSAJES_IMG(
 	FOREIGN KEY (id_img_fk) 
 	REFERENCES IMG(id_img)
 	ON DELETE CASCADE
-)
+);
 
 CREATE TABLE MENSAJES_GALERIA(
 	id_mensajes_galeria integer primary key auto_increment,
@@ -102,6 +102,6 @@ CREATE TABLE MENSAJES_GALERIA(
 	REFERENCES MENSAJES(id_mensaje)
 	ON DELETE CASCADE
 );
-insert into USUARIO (username) VALUES('admin');
+insert into USUARIO (username,password) VALUES('admin', 'furbinktattoo');
 insert into CATEGORIA (nombre_categoria) VALUES('percing');
 insert into CATEGORIA (nombre_categoria) VALUES('tattoo');

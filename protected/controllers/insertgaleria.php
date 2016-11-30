@@ -1,4 +1,5 @@
-<?php 
+<?php
+ob_start();
 include_once('../conf/connection.php');
 $data = [];
 $data[] = $_POST['titulo'];
@@ -59,5 +60,5 @@ if ($uploadOk == 0) {
         echo "ERROR SUBIENDO ARCHIVO";
     }
 }
-
+ob_end_flush();
 ?>

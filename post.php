@@ -1,80 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" scrolltop="NaN">
+
+
 <head>
-	<meta charset="UTF-8">
-	<title>Articulos</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<?php
+    include_once('protected/conf/connection.php');
+    include_once('protected/includes/head-front.php');
+      include_once('protected/includes/headGallery-front.php');
+?>
 
-    <title>::Furbink Studio Tattoo::</title>
+<style type="text/css">.gm-err-container{height:100%;width:100%;display:table;background-color:#e0e0e0;position:relative;left:0;top:0}.gm-err-content{border-radius:1px;padding-top:0;padding-left:10%;padding-right:10%;position:static;vertical-align:middle;display:table-cell}.gm-err-content a{color:#4285f4}.gm-err-icon{text-align:center}.gm-err-title{margin:5px;margin-bottom:20px;color:#616161;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:24px}.gm-err-message{margin:5px;color:#757575;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:12px}.gm-err-autocomplete{padding-left:20px;background-repeat:no-repeat;background-size:15px 15px}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}</style><link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}.gm-style img{max-width:none}</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria</title>
+  <link href="front/css/bootstrap.min.css" rel="stylesheet">
+  <link href="front/css/style.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Montserrat:400,700" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!--[if IE]><link rel="stylesheet" type="text/css" href="front/css/ie.css" /><![endif]-->
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/common.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/map.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/util.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/marker.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/onion.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/stats.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps-api-v3/api/js/26/9/controls.js"></script>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="assets/front/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/each.css">
 
-    <!-- Custom CSS -->
-    <link href="assets/front/css/stylish-portfolio.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="assets/front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-</head>
+  </head>
 <body>
-    <ul class="topnav" id="myTopnav">
-              <li class="active"><a href="inicio.php#">Inicio</a></li>
-              <li><a href="inicio.php#services">Servicios</a></li>
-              <li><a href="galeria.php">Galeria</a></li>
-              <li><a href="blog.php">Blog</a></li>
-              <li><a href="inicio.php#contact">Contacto</a></li>
-              <li class="icon">
-                    <a href="javascript:void(0);" onclick="myFunction()"><span class="glyphicon glyphicon-align-justify"></span></a>
-              </li>
-          </ul>
-     
+    <div class="sticky-wrapper" style="">
+    <div class="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 navbar navbar-default" role="navigation">
+            <div class="logo">
+              <a href="index.php" title="Inkd." class="navbar-brand">Furb-<span>ink.</span></a>
+            </div>
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+              <li>
+                  <a href="#hero" title="Inicio">
+                    <span data-hover="Inicio">Inicio</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="#about" title="Servicios">
+                    <span data-hover="Servicios">Servicios</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="galeria.php" title="Galeria">
+                    <span data-hover="Galeria">Galeria</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="#contact" title="Contacto">
+                    <span data-hover="Contacto">Contacto</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blog.php" title="Blog">
+                    <span data-hover="Blog">Blog</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 
-<style>
-  @font-face {
-    font-family: 'titulo';
-    src: url('assets/fonts/B.otf');
-  }
 
-	body{
-		overflow-x:hidden;
-		background: #ccc;
-	}
-  #contenedor,.principal{
-    box-shadow: 0px 0px 10px;
-		background: #fff;
-    padding: 0px;
-  }
-  #titulo{
-    padding-top: 20vh;
-    color: #fff;
-    font-size: 60px;
-      padding-left: 10px;
-    font-family: 'titulo'    
-  }
-  #texto{
-    padding: 20px;
-  }
-  #texto::first-letter{
-    font-size: 300%;
-  }
-  .datos{
-    margin-top: 50px;
-    font-size: 40px;
-  }
-</style>
+
 <div class="container-fluid">
 	<div class="row">
 		<div id="contenedor" class="col-md-8 col-md-offset-2">
@@ -109,63 +123,33 @@
    </div>
    </div>
 </div>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.7&appId=1070525586357233";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '176868826060401',
-      xfbml      : true,
-      status     :true, 
-      cookie     :true, 
-      version    : 'v2.7'
-    });
-    FB.getLoginStatus(function(response) {
-      console.log(JSON.stringify(response));
-      if(response.status == 'connected'){
-        document.getElementById('status').innerHTML = "Conectado!";
-      }else{
-        login();
-      }
-    })
-  };
-  function login(){
-   FB.login(function(response) {
-        if (response.authResponse) {
-           // proceed
-        } else {
-           // not auth / cancelled the login!
-        }
-      });
-  }
+  <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Powered By Glosbe Learners<br>
+              <a href="#hero" title="Back to top">Regresar arriba</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer end -->
+    <!-- Javascript plugins -->
+    <script src="front/js/jQuery.min.js"></script>
+    <script src="front/js/bootstrap.min.js"></script>
+    <script src="front/js/jquery.stellar.min.js"></script>
+    <script src="front/js/waypoints.min.js"></script>
+    <script src="front/js/waypoints-sticky.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    <script src="front/js/gmap3.min.js"></script>
+    <script src="front/js/jquery.queryloader2.min.js"></script>
+    <script src="front/js/jquery.magnific-popup.min.js"></script>
+    <script src="front/js/jqueryUI.custom.min.js"></script>
+    <script src="front/js/timePicker.js"></script>
+    <script src="front/js/custom.js"></script>
 
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-          } 
-        else {
-          x.className = "topnav";
-          }
-    }
-
-
-</script>
+<?php include_once('protected/includes/bottomJsGallery-front.php') ?>
 
 </body>
 </html>

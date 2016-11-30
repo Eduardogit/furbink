@@ -6,6 +6,12 @@
  <link rel="stylesheet" href="../assets/css/imgpreview.css">
  <title>Post</title>
 </head>
+<?php 
+    session_start();
+    if(empty($_SESSION['usuario'])){
+        header('Location:logout.php');
+    }
+   ?>
 <body>
   <style>
     #cke_1_top{
@@ -93,7 +99,7 @@
 
   <?php
   $id_post = $_GET['id'];
-  $sql1 = "SELECT * FROM POST WHERE id_post = ".$id_post." ";
+  $sql1 = "SELECT * FROM POST WHERE id_post = ".$id_post."";
   $result = $connection->query($sql1);
   $row = $result->fetch_assoc();
   $sql2    = "SELECT url FROM IMG where id_post_fk = ".$row['id_post']."";
